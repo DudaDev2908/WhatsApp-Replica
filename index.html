@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clone WhatsApp Web Simples</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="sidebar" aria-label="Lista de conversas">
+    <header>WhatsApp</header>
+    <div id="search-container">
+      <input id="search" placeholder="Pesquisar ou começar uma nova conversa" aria-label="Pesquisar conversas" />
+    </div>
+    <div id="filters" role="group" aria-label="Filtro de conversas">
+      <button class="filter active" type="button">Tudo</button>
+      <button class="filter" type="button">Não lidas</button>
+      <button class="filter" type="button">Favoritas</button>
+      <button class="filter" type="button">Grupos</button>
+    </div>
+    <div id="notification-bar" role="alert">
+      <span>As notificações de mensagens estão desativadas. <span class="activator" tabindex="0" role="button">Ativar</span></span>
+      <button aria-label="Fechar notificação" onclick="document.getElementById('notification-bar').style.display='none'">&times;</button>
+    </div>
+    <div id="conversation-list" tabindex="0" aria-live="polite">
+      <div class="conversation selected" data-id="1" tabindex="0" role="button" aria-pressed="true">
+        <img class="avatar" src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Avatar%20de%20menino%20anime%20de%20rosto%20azul%20e%20roxo&id=64e7a13a-71d8-45fd-a989-1780e3db25a9" alt="Foto de perfil azul anime jovem com cabelo roxo" />
+        <div class="conversation-info">
+          <div class="conversation-name">meu goidinho</div>
+          <div class="conversation-last-message" title="VAI ESTRAGA O FEIJAO PQ NINGUEM COME O KRLH DO FEIJAO">VAI ESTRAGA O FEIJAO PQ NINGUEM COME O KRLH DO FEIJAO DO ...</div>
+        </div>
+        <div class="conversation-time" aria-label="Última mensagem às 13:52">13:52</div>
+      </div>
+      <div class="conversation" data-id="2" tabindex="0" role="button" aria-pressed="false">
+        <img class="avatar" src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Avatar%20de%20boneco%20branco%20com%20bolsa%20pretapor%20fundo%20branco&id=951b9ad4-bf8d-4b9a-9bb8-daf230f252cc" alt="Avatar de boneco branco com bolsa preta e fundo branco" />
+        <div class="conversation-info">
+          <div class="conversation-name">vava dos uótchais</div>
+          <div class="conversation-last-message">MEU IRMAO: Slk</div>
+        </div>
+        <div class="conversation-time" aria-label="Última mensagem às 13:30">13:30</div>
+      </div>
+      <div class="conversation" data-id="3" tabindex="0" role="button" aria-pressed="false">
+        <img class="avatar" src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Avatar%20de%20homem%20jovem%20de%20cabelo%20curto%20sentado%20em%20fundo%20cinza&id=245d3586-066f-4f79-8aed-4f83f556db83" alt="Avatar de homem jovem de cabelo curto sentado em fundo cinza" />
+        <div class="conversation-info">
+          <div class="conversation-name">MEU IRMAO</div>
+          <div class="conversation-last-message">Tu falo q não precisava de espera</div>
+        </div>
+        <div class="conversation-time" aria-label="Última mensagem às 13:02">13:02</div>
+      </div>
+      <div class="conversation" data-id="4" tabindex="0" role="button" aria-pressed="false">
+        <img class="avatar" src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Avatar%20de%20comida%20grãos%20de%20feijão%20em%20madeira&id=342b88ae-8d3d-46a9-8bcc-6d67ec32c4ea" alt="Avatar de grãos de feijão em madeira" />
+        <div class="conversation-info">
+          <div class="conversation-name">Gastos Setembro</div>
+          <div class="conversation-last-message"><svg class="check-icon" viewBox="0 0 24 24" aria-label="Mensagem lida"><path d="M1.5 12l5 5L18 6" stroke="#4fc3f7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Você: 29/09 R$20</div>
+        </div>
+        <div class="conversation-time" aria-label="Última mensagem às 12:52">12:52</div>
+      </div>
+      <div class="conversation" data-id="5" tabindex="0" role="button" aria-pressed="false">
+        <img class="avatar" src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Avatar%20de%20homem%20mais%20velho%20de%20camisa%20xadrez&id=923fed38-338f-48a7-af83-c43b168d3859" alt="Avatar de homem mais velho de camisa xadrez" />
+        <div class="conversation-info">
+          <div class="conversation-name">rainer</div>
+          <div class="conversation-last-message" title="Aguardando mensagem. Essa ação pode levar alguns instantes."><svg class="check-icon" viewBox="0 0 24 24" aria-label="Mensagem lida"><path d="M1.5 12l5 5L18 6" stroke="#4fc3f7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> <span>🕓 Aguardando mensagem. Essa ação pode levar alguns instantes.</span></div>
+        </div>
+        <div class="conversation-time" aria-label="Última mensagem ontem">Ontem</div>
+      </div>
+      <div class="conversation" data-id="6" tabindex="0" role="button" aria-pressed="false">
+        <img class="avatar" src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Avatar%20de%20grupo%20abstrato%20ícone%20cinza&id=b22c7a9e-5f34-4f77-a55c-7999e4205d61" alt="Ícone de grupo abstrato cinza" />
+        <div class="conversation-info">
+          <div class="conversation-name">Lanche Coletivo - PW</div>
+          <div class="conversation-last-message">Você foi adicionado(a)</div>
+        </div>
+        <div class="conversation-time" aria-label="Adicionado em 18 de setembro de 2025">18/09/2025</div>
+      </div>
+      <div class="conversation" data-id="7" tabindex="0" role="button" aria-pressed="false">
+        <img class="avatar" src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Avatar%20de%20menina%20gótica%20de%20cabelo%20longos%20preto&id=7e36995f-4658-4a13-af5b-30be82ae438f" alt="Avatar de menina gótica de cabelos longos preto" />
+        <div class="conversation-info">
+          <div class="conversation-name">namorador online</div>
+          <div class="conversation-last-message">to botando comidinha</div>
+        </div>
+        <div class="conversation-time" aria-label="Última mensagem em 9 de setembro de 2025">09/09/2025</div>
+      </div>
+      <div class="conversation" data-id="8" tabindex="0" role="button" aria-pressed="false">
+        <img class="avatar" src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Avatar%20de%20banner%20patio%20de%20leilões%20colorido&id=a18b22e2-9e20-4c56-8204-17f3edb77ca7" alt="Avatar de banner colorido do pátio de leilões" />
+        <div class="conversation-info">
+          <div class="conversation-name">+55 19 99839-0384</div>
+          <div class="conversation-last-message" title="Olá, tudo bem ? gostaria de saber se ainda possui interesse na compra">Olá, tudo bem ? gostaria de saber se ainda possui interesse na com...</div>
+        </div>
+        <div class="conversation-time" aria-label="Última mensagem em 9 de setembro de 2025">09/09/2025</div>
+      </div>
+      <div style="height: 1rem;"></div>
+    </div>
+    <div style="padding: 0.5rem 1rem;">
+      <button style="background:#25d366; color:#fff; border:none; font-weight: 700; padding: 0.6rem; border-radius: 5px; width: 100%; cursor:pointer;">Baixar o WhatsApp para Windows</button>
+    </div>
+  </div>
+
+  <div id="chat" role="main" aria-label="Área de conversa">
+    <div id="chat-header">
+      <img class="avatar" src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Avatar%20de%20menino%20anime%20de%20rosto%20azul%20e%20roxo&id=64e7a13a-71d8-45fd-a989-1780e3db25a9" alt="Foto de perfil azul anime jovem com cabelo roxo" />
+      <div class="name-time">
+        <div class="name">meu goidinho</div>
+        <div class="last-seen">visto por último hoje às 13:52</div>
+      </div>
+      <div id="chat-header-right" aria-label="Ações da conversa">
+        <svg viewBox="0 0 24 24" role="img" aria-label="Chamada de vídeo" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        <svg viewBox="0 0 24 24" role="img" aria-label="Busca" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" role="img" aria-label="Mais opções" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+      </div>
+    </div>
+    <div id="chat-messages" aria-live="polite" aria-relevant="additions" style="background-image: url('whatsapp-noturno-hero-554x369.jpg'); background-repeat: repeat;">
+      <div class="message received">
+        
+      </div>
+      <div class="message received">
+        
+      </div>
+      <div class="message received">
+       
+      </div>
+      <div class="message received">
+        
+      </div>
+      <div class="message received">
+       
+      </div>
+      <div class="message received">
+        
+      </div>
+      <div class="message sent">
+        
+      </div>
+      <div class="message sent">
+        
+        
+      </div>
+      <div class="message sent">
+        
+       
+      </div>
+      <div class="message sent">
+        
+        
+      </div>
+      <div class="message sent">
+        
+       
+      </div>
+      <div class="message sent">
+      
+       
+      </div>
+      <div class="message sent image-message">
+        <img src="https://via.placeholder.com/100" alt="" />
+        
+      </div>
+      <div class="message sent">
+        
+        
+      </div>
+      <div class="message sent">
+        
+        
+      </div>
+    </div>
+    <form id="chat-input-bar" aria-label="Enviar mensagem" onsubmit="return false;">
+      <input
+        id="chat-input"
+        type="text"
+        aria-label="Digite uma mensagem"
+        placeholder="Digite uma mensagem"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button id="send-button" type="submit" disabled aria-disabled="true" aria-label="Enviar mensagem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13" />
+          <polygon points="22 2 15 22 11 13 2 9 22 2" />
+        </svg>
+      </button>
+    </form>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
